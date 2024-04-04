@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <cctype> // for isalpha() and tolower()
+using namespace std;
+int countVowels(const string& str) {
+    int count = 0;
+    for (char ch : str) {
+        // Convert character to lowercase for case-insensitive comparison
+        char lowerCh = tolower(ch);
+        // Check if the character is a vowel
+        if (isalpha(lowerCh) && (lowerCh == 'a' || lowerCh == 'e' || lowerCh == 'i' || lowerCh == 'o' || lowerCh == 'u')) {
+            count++;
+        }
+    }
+    return count;
+}
+int main() {
+    string input;
+    cout << "Enter a string: ";
+    getline(cin, input);
+
+    int vowelsCount = countVowels(input);
+    cout << "Number of vowels in the string: " << vowelsCount << endl;
+    return 0;
+}
