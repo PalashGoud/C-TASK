@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+void drawRectangle(int width, int height) {
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+}
+void drawTriangle(int height) {
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j <= i; j++) {
+            cout << "* ";
+        }
+        cout << endl;
+}
+}
+void drawSquare(int sideLength) {
+    for (int i = 0; i < sideLength; i++) {
+        for (int j = 0; j < sideLength; j++) {
+            cout << "* ";
+        }
+        cout << endl;
+    }
+}
+int main() {
+    int choice;
+    cout << "Simple Drawing Program\n";
+    cout << "1. Draw Rectangle\n";
+    cout << "2. Draw Triangle\n";
+    cout << "3. Draw Square\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+  switch (choice) {
+        case 1: {
+            int width, height;
+            cout << "Enter width and height of rectangle: ";
+            cin >> width >> height;
+            drawRectangle(width, height);
+            break;
+        }
+        case 2: {
+            int height;
+            cout << "Enter height of triangle: ";
+            cin >> height;
+            drawTriangle(height);
+            break;
+        }
+        case 3: {
+            int sideLength;
+            cout << "Enter side length of square: ";
+            cin >> sideLength;
+            drawSquare(sideLength);
+            break;
+        }
+        default:
+            cout << "Invalid choice\n";
+            break;
+    }
+    return 0;
+}
